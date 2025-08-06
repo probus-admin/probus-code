@@ -63,4 +63,32 @@ document.addEventListener("DOMContentLoaded", async function () {
       return;
     }
 
-    searchResultsCount.textContent = `${matches.length} r
+    const html = matches.map(member => {
+      const fullName = `${member.firstName || ""} ${member.lastName || ""}`.trim();
+      const email = member.email || "N/A";
+      const phone = member.mobile || "N/A";
+      return `
+        <div class="summary-card">
+          <h3>${fullName}</h3>
+          <ul>
+            <li><strong>Email:</strong> ${email}</li>
+            <li><strong>Phone:</strong> ${phone}</li>
+          </ul>
+        </div>
+      `;
+    }).join("");
+
+    searchResults.innerHTML = html;
+    searchResults.style.display = "block";
+    searchResultsCount.textContent = `${matches.length} result${matches.length === 1 ? "" : "s"} found`;
+    searchResultsCount.style.display = "block";
+  });
+
+  clearButton.addEventListener("click", function () {
+    searchBox.value = "";
+    searchResults.innerHTML = "";
+    searchResults.style.display = "none";
+    searchResultsCount.textContent = "";
+    searchResultsCount.style.display = "none";
+  });
+});
