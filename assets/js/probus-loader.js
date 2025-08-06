@@ -15,11 +15,10 @@ if (!window.location.hostname.includes("squarespace.com")) {
     loadScript("https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js");
     loadScript("https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js");
     loadScript("https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js");
-    loadScript("/assets/js/firebase-init.js");
   });
 }
 
 // Load Tippy.js globally
 loadScript("https://unpkg.com/@popperjs/core@2");
 loadScript("https://unpkg.com/tippy.js@6");
-loadScript("/assets/js/tippy-init.js");
+
