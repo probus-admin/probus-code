@@ -9,15 +9,6 @@ function loadScript(url, callback = null) {
   document.head.appendChild(script);
 }
 
-// Load Firebase init on all pages (unless editing)
-if (!window.location.hostname.includes("squarespace.com")) {
-  loadScript("https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js", () => {
-    loadScript("https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js");
-    loadScript("https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js");
-    loadScript("https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js");
-  });
-}
-
 // Load Tippy.js globally
 loadScript("https://unpkg.com/@popperjs/core@2");
 loadScript("https://unpkg.com/tippy.js@6");
