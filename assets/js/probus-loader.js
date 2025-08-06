@@ -21,4 +21,3 @@ if (!window.location.hostname.includes("squarespace.com")) {
 // Load Tippy.js globally
 loadScript("https://unpkg.com/@popperjs/core@2");
 loadScript("https://unpkg.com/tippy.js@6");
-
